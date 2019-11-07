@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name         Nested Extender
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       Hasaabitt
+// @match        http://orteil.dashnet.org/nested*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    document.getElementsByClassName("thing")[0].id = "topElement";
+    document.getElementById('topElement').style.width = document.getElementById('topElement').offsetWidth + "px";
+    window.onkeypress = function(event){
+        var newwidth;
+        if(event.key == '['){
+            newwidth = Number(document.getElementById('topElement').style.width.substr(0, document.getElementById('topElement').style.width.length-2)) - 100;
+            document.getElementById('topElement').style.width = (newwidth + "px");//(document.getElementById('topElement').style.width - 100) + "px";
+        }else if(event.key == ']'){
+            newwidth = Number(document.getElementById('topElement').style.width.substr(0, document.getElementById('topElement').style.width.length-2)) + 100;
+            document.getElementById('topElement').style.width = (newwidth + "px");//(document.getElementById('topElement').style.width - 100) + "px";
+        }
+    }
+})();
