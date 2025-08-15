@@ -4,7 +4,7 @@
 // @version      0.1
 // @description  try to take over the world!
 // @author       Hasaabitt
-// @match        http://orteil.dashnet.org/nested*
+// @match        https://orteil.dashnet.org/nested*
 // @grant        none
 // ==/UserScript==
 
